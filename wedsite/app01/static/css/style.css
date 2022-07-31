@@ -1,0 +1,177 @@
+<style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        .nav {
+            width: 800px;
+            /*    width: 280px;*/
+            margin-right: 180px;
+            height: 700px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            overflow: visible;
+            transition: 0.5s;
+        }
+
+        .icon {
+            width: 250px;
+            height: 60px;
+            margin-left: 25px;
+            margin-top: 20px;
+            display: flex;
+        }
+
+        .icon-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 0;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            overflow: hidden;
+        }
+
+        .icon-img img {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            object-fit: cover;
+        }
+
+        .icon-con {
+            height: 60px;
+            margin-left: 25px;
+        }
+
+        .icon-con p {
+            padding-top: 5px;
+        }
+
+        .icon-con h2 {
+            font-weight: 400;
+        }
+    .main{
+	     text-align: center; /*让div内部文字居中*/
+	     background-color:transparent;
+	     border-radius: 20px;
+	     width: 300px;
+	     height: 350px;
+	     margin: auto;
+	     position: absolute;
+	     top: 0;
+	     left: 0;
+	     right: 0;
+         bottom: 0;
+         }
+
+    .imgshow{
+         background-size:63px 100px;
+         background-repeat:no-repeat;
+         }
+    .icon {
+         width: 250px;
+         height: 60px;
+         margin-left: 25px;
+         margin-top: 20px;
+         display: flex;
+          }
+    .icon-img {
+          width: 200px;
+          height: 200px;
+          border-radius: 5%;
+          border: 10px solid rgba(255, 255, 255, 0.3);
+          overflow: hidden;
+        }
+        /*隐藏checked复选框*/
+            #sidemenu{
+                display: none;
+            }
+
+            #sidemenu:checked + aside {
+                /*为被选中的sidemenu后的aside设置属性（紧邻）*/
+                left: 0;
+                /*点击按钮即选中checked后,侧边栏位置变为贴着左边,配合ease-out使用,有渐变滑出的效果*/
+            }
+
+            #sidemenu:checked ~ #wrap {
+                /*为被选中的sidemenu后的wrap设置属性（非紧邻）*/
+                padding-left: 220px;
+            }
+
+            aside {
+                /*侧边栏,初始位置为-200px，即隐藏效果*/
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: -200px;
+                width: 200px;
+                background: black;
+                transition: 0.2s ease-out;
+                /*动画效果的执行方式是ease-out，即侧边栏滑动效果为渐变式，而不是生硬的突然变化*/
+            }
+
+            h2 {
+                color: white;
+                text-align: center;
+                font-size: 2em;
+            }
+
+
+            #wrap {
+                color:transparent;
+                margin-left: 20px;
+                padding: 4px;
+                transition: 0.5s ease-out;
+                display:inline-block;
+            }
+            label {
+                /*控制侧边栏进出的按钮*/
+                background: white;
+                border-radius: 60px;
+                color: black;
+                cursor: pointer;
+                display: inline-block;
+                font-family: Courier New;
+                font-size: 2em;
+                width: 1.5em;
+                height: 1.5em;
+                line-height: 1.5em;
+                text-align: center;
+                display: inline-block;
+            }
+            .wrap {
+            width: 100%;
+            height: 100vh;
+            background: url(../img/thumb.png) center no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            label:hover {
+                background: #000;
+            }
+
+            #sideul li {
+                background-color:transparent;
+                list-style: none;
+                color: white;
+                width: 100%;
+                height: 3.5em;
+                font-size: 0.8em;
+                text-align: center;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            #sideul li:hover {
+                color: orange;
+            }
+            li{
+               font-size:2px;
+            }
+        </style>

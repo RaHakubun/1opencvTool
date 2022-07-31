@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="../static/css/style.css"/>
+    </head>
+    <body>
+        <input type='checkbox' id='sidemenu'>
+        <aside>
+            <h2>数字图像处理</h2>
+            <br />
+            <ul id="sideul">
+              <a href="{%url 'navigate'%}">
+                    <li>导航页</li>
+                </a>
+                <a href="##">
+                    <li >图像动作驱动</li>
+                </a>
+                <a href="{% url '_and'%}">
+                    <li >计算处理</li>
+                </a>
+                <a href="{%url 'flip'%}">
+                    <li>几何变换</li>
+                </a>
+                <a href="{%url 'erosion' %}">
+                    <li>形态学操作</li>
+                </a>
+                <li><strong>图像增强</strong></li>
+                <a href="{%url 'neighbor_aver'%}">
+                    <li>空域平滑</li>
+                </a>
+                <a href="{%url 'ele_roberts'%}">
+                    <li>空域锐化</li>
+                </a>
+                <a href="{%url 'lowpass_filter'%}">
+                    <li>频域平滑</li>
+                </a>
+                <a href="{% url 'highpass_filter'%}">
+                    <li>频域锐化</li>
+                </a>
+                <a href="{%url 'robs'%}">
+                    <li>边缘检测</li>
+                </a>>
+                <a href="{%url 'noise_desc'%}">
+                    <li>图像噪声</li>
+                </a>
+
+            </ul>
+        </aside>
+        <div id='wrap'>
+            <label id='sideMenuControl' for='sidemenu'>≡</label>
+            <a href="{%url 'neighbor_aver'%}"  style="display:inline-block;padding:10px;margin:0px;"><p style="color:black;">邻域平均</p></a>
+            <a href="{%url 'median_filter'%}" style="display:inline-block;padding:10px;margin:0px;"><p style="color:black;">中值滤波</p></a>
+           <!--for 属性规定 label 与哪个表单元素绑定，即将这个控制侧边栏进出的按钮与checkbox绑定-->
+        </div>
+<div class="wrap">
+<div class="main">
+    <div class="icon-img">
+        <img src="" id="img">
+    </div>
+    <form action="" method="post" enctype="multipart/form-data" target="iframe">
+        {% csrf_token %}
+        <div>
+            <input type="file" name="avatar" id="file" style="color:black;">
+            <input type="submit" value="提交" style="color:blue; border-radius:10%;padding:10px 10px;
+        width: 60px;height: 40px;background-color: rgb(255,255,255);"></div>
+    </form>
+    <iframe id="iframe" name="iframe" style="display:none;"></iframe>
+</div>
+</div>
+    <script>
+    document.querySelector('#file').onchange = function (){
+      if(this.files.length){
+        let file = this.files[0];
+        let reader = new FileReader();
+        reader.onload = function(){
+          document.querySelector('#img').src = this.result;
+          document.querySelector('#text').innerHTML = this.result;
+        };
+        reader.readAsDataURL(file);
+       }
+    }
+    </script>
+    </body>
+</html>

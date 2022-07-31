@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:width="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>你所热爱的，就是你的生活</title>
+    <style>
+.login-form{
+
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 8px; //增加登录框的圆弧角
+    width: 800px;
+    max-width: 100%;
+    padding: 0px 35px 0; //内边距
+    margin:auto;
+    position:absolute; //绝对位置
+    top:50%;
+    left:50%;
+    margin:auto 56px 56px -170px;
+<!--    margin:160px 0 0 200px; //可以自行微调输入框的位置-->
+}
+</style>
+
+</head>
+<body>
+<div>
+    <h1 align="center">你所热爱的就是你的生活</h1>
+</div >
+<div class="login-form">
+    <form method="post" action="/login/" enctype="multipart/form-data">
+        {% csrf_token  %}
+        <div><input type="text" name="user" placeholder="用户名"></div>
+        <div>
+            <input type="password" name="user" placeholder="密码">
+        </div>
+        <div>
+            <input type="file" id="avatar" name="avatar" accept="image/png,image/jpeg">
+        </div>
+        <div>
+            <input type="submit" value="提交">
+        </div>
+    </form>
+</div>
+
+
+<div>
+    <a href="{%url 'user_list'%}">yes!!!</a>
+    <div>
+        <img id="image_code" src="/image/code" style="width: 50px;">
+    </div>
+    <button type="submit"/>
+</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>
+        Digital Photo Processing Unity
+    </title>
+    <style type="">
+        #block{ } .box{ }
+    </style>
+</head>
+
+<body>
+    <h1>Look Carefully What You Are Doing</h1>
+    <h2>Things may not happen as you WISH</h2>
+    <p id="01" onclick="myfirstFunction()">Can you change the meaning?</p>
+    <button type="button" onclick="recovery()">Recovery Set</button>
+    <button type="button" onclick="recovery1()">Japanese Set!</button>
+    <button type="button" onclick="recovery2()"> Don't know what to do set!</button>
+    <div margin="19px">
+        <p id="circleEffect" backgroud-color="red" onclick="forMy FirstLove()">石原里美（石原さとみ）さんは誕生日おめでとうございます！</p>
+    </div>
+    <ul>
+        <li>Bei_Jing</li>
+        <li>ShangHai</li>
+        <li>ShenZhen</li>
+    </ul>
+    <a href="{% url 'navigate' %}" >gogogogogogo</a>
+    <script type="text/javascript">
+        function myfirstFunction() {
+            x = document.getElementById("01");
+            x.innerHTML = "Hello Photography Processing !";
+        }
+
+        function recovery() {
+            x = document.getElementById("01");
+            x.innerHTML = "Can you change the meaning?";
+        }
+
+        function recovery1() {
+            x = document.getElementById("01");
+            x.innerHTML = "いまのmissionはよく大金をあげる";
+        }
+
+        function recovery2() {
+            x = document.getElementById("01");
+            x.innerHTML = "All Right I'm Good Enough ! ! !";
+        }
+
+        function forMyFirstLove() {
+            tag = document.getElementById("circleEffect");
+            dataString = tag.innerHTML;
+            firstString = dataString[0];
+            otherString = dataString.substring(1, dataString.length);
+            newdataString = otherString + firstString;
+            tag.innerHTML = newdataString;
+        }
+        setInterval(forMyFirstLove, 800)
+    </script>
+</body>
+
+</html>>
